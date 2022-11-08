@@ -21,7 +21,7 @@ def is_ok(ok, mid):
 def bisect(ng, ok):
     while (abs(ok-ng) != 0):
         mid = (ok+ng) // 2
-        if mid == ok or mid == ng:
+        if mid-ok==1:
             if is_ok(ok, ok):
                 return ok
             else:
