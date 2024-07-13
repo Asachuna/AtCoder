@@ -1,25 +1,15 @@
-H, W = map(int, input().split())
-S = [list(input()) for _ in range(H)]
+N = int(input())
+A = list(map(int, input().split()))
 
-minx = 99999
-maxx = -1
-miny = 99999
-maxy = -1
+count = {}
+for i in range(1, N+1):
+    count[i] = 0
 
-for x in range(W):
-    for y in range(H):
-        if S[y][x] == "#":
-            if x < minx:
-                minx = x
-            if y < miny:
-                miny = y
-    
-            if x > maxx:
-                maxx = x
-            if y > maxy:
-                maxy = y
+result = []
 
-for x in range(minx, maxx+1):
-    for y in range(miny, maxy+1):
-        if S[y][x] == ".":
-            print(x+1,y+1)
+for a in A:
+    count[a] += 1
+    if count[a] == 2:
+        result.append(str(a))
+
+print(" ".join(result))

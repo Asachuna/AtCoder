@@ -1,7 +1,7 @@
-N = int(input())
+N = input()
+S = input()
+r = ""
+for s in S:
+    r += s + s
 
-road = N%5
-if (road <= 2):
-    print(N-N%5)
-else:
-    print(N+(5-N%5))
+print(r)
